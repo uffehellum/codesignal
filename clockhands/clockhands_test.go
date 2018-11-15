@@ -17,11 +17,8 @@ func clockHandAngle(time string) (x float64) {
 	fmt.Println(x)
 	x = x / 10.0 * 59.0
 	fmt.Println(x)
-	x = math.Remainder(x-180, 360) + 180
+	x = math.Abs(math.Remainder(x, 360))
 	fmt.Println(x)
-	x = math.Abs(x)
-	fmt.Println(x)
-	x *= 360
 	return
 }
 
