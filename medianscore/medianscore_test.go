@@ -35,7 +35,7 @@ func medianScores(scores []int) (r []int) {
 		if len(low) > len(high) {
 			r = append(r, -low[0])
 		} else {
-			r = append(r, (high[0]-low[0])/2)
+			r = append(r, (high[0]-low[0]+1)/2)
 		}
 	}
 	return
@@ -60,4 +60,8 @@ func Test1(t *testing.T) {
 
 func Test2(t *testing.T) {
 	test(t, []int{10, 20, 30}, []int{10, 15, 20})
+}
+
+func Test3(t *testing.T) {
+	test(t, []int{98, 91, 70, 26, 75, 91, 30, 88, 86}, []int{98, 95, 91, 81, 75, 83, 75, 82, 86})
 }
